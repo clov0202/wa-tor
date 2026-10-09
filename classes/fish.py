@@ -17,13 +17,5 @@ class Fish:
 
         self.x+=new_x
         self.y+=new_y
-
-        if self.x < 0:
-            self.x += gw
-        elif self.x >= gw:
-            self.x =  self.x - gw
-
-        if self.y < 0:
-            self.y += gh
-        elif self.y >= gh:
-            self.y =  self.y - gh
+        if not (0 <= self.x < gw): self.x %= gw
+        if not (0 <= self.y < gh): self.y %= gh
